@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Ilya Kluev
+      changes:
+        - createTable:
+            tableName: user_addresses
+            columns:
+              - column:
+                  name: id
+                  type: int unsigned
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: int unsigned
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: int unsigned
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: user_addresses
+            baseColumnNames: user_id
+            constraintName: fk_user_addresses_user_id
+            onDelete: CASCADE
+            referencedColumnNames: id
+            referencedTableName: users
+
+        - addForeignKeyConstraint:
+            baseTableName: user_addresses
+            baseColumnNames: address_id
+            constraintName: fk_user_addresses_address_id
+            onDelete: CASCADE
+            referencedColumnNames: id
+            referencedTableName: address

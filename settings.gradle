@@ -1,0 +1,6 @@
+rootProject.name = 'treez'
+
+include "react-ui"
+
+include "user-service"
+include "user-service:user-service-common"

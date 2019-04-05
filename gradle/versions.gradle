@@ -1,0 +1,12 @@
+ext {
+    versions = [
+            'commons-lang3'          : '3.7',
+            'commons-io'             : '2.6',
+            'flyway-core'            : '5.2.1',
+            'flyway-spring-test'     : '5.1.0',
+            'boot-starter-parent'    : '2.0.4.RELEASE',
+            'liquibase-core'         : '3.5.5',
+            'mysql-connector-java'   : '8.0.15',
+            'lombok'                 : '1.18.6'
+    ]
+}

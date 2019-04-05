@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_service?createDatabaseIfNotExist=true&nullNamePatternMatchesAll=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=FALSE
+    username: root
+    password: secret
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yml

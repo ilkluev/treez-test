@@ -1,0 +1,34 @@
+buildscript {
+    apply from: "$rootProject.projectDir/gradle/spring-boot-build-script.gradle", to: buildscript
+}
+
+version = "1.0.0-rc.0"
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: "io.spring.dependency-management"
+
+bootJar {
+    archiveName = 'user-service.jar'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${versions.'boot-starter-parent'}"
+    }
+}
+
+dependencies {
+    compile project(":user-service:user-service-common")
+    
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-hateoas")
+
+    compileOnly("org.projectlombok:lombok:${versions.'lombok'}")
+    annotationProcessor("org.projectlombok:lombok:${versions.'lombok'}")
+    
+    compile("mysql:mysql-connector-java:${versions.'mysql-connector-java'}")
+    compile("org.liquibase:liquibase-core:${versions.'liquibase-core'}")
+}

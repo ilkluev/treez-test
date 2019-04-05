@@ -1,0 +1,13 @@
+apply from: 'gradle/versions.gradle'
+
+/**
+ * SUBPROJECT CONFIGURATION
+ */
+subprojects {
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
