@@ -1,3 +1,5 @@
+.gradle/
+
 .bundle/
 data/
 venv/
