@@ -1,0 +1,14 @@
+.bundle/
+data/
+venv/
+out/
+build/
+node_modules/
+dist/
+.idea/
+
+*.iml
+*.iws
+*.ipr
+*.directory
+*.retry
