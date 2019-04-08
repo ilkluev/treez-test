@@ -30,6 +30,7 @@ class Configuration extends Component {
 
                 </div>
                 <div className="text-right">
+                    <Link to={`/editor/edit/${this.props.configuration.id}`} className="card-link">Edit</Link>
                     <Link to={`/user/${this.props.configuration.id}`} className="card-link">View details</Link>
                 </div>
             </div>

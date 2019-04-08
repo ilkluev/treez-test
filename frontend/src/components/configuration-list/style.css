@@ -1,0 +1,17 @@
+.configuration-list_action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
+}
+
+.configuration-list_action-header_add-button {
+  height: 38px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}

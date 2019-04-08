@@ -16,6 +16,7 @@ jar {
 
 
 dependencies {
+    compile("javax.validation:validation-api:${versions.'validation-api'}")
     compileOnly("org.projectlombok:lombok:${versions.'lombok'}")
     annotationProcessor("org.projectlombok:lombok:${versions.'lombok'}")
 }

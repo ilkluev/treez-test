@@ -15,6 +15,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static com.treez.test.utils.ModelConvertUtils.*;
 
 @RestController
@@ -31,8 +33,17 @@ public class UserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = "application/hal+json")
-    public ResponseEntity<UserResource> createUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserResource> createUser(@Valid @RequestBody UserDto userDto) {
         User user = userService.save(toUser(userDto));
+        return ResponseEntity.ok(new UserResource(user));
+    }
+
+    @PutMapping(value = {"/{id}"}, produces = "application/hal+json")
+    public ResponseEntity<UserResource> updateUser(@PathVariable(name = "id") Integer id, @RequestBody UserDto userDto) {
+        User user = toUser(userDto);
+        user.setId(id);
+        userService.save(user);
+
         return ResponseEntity.ok(new UserResource(user));
     }
 
@@ -46,4 +57,5 @@ public class UserController {
         User user = userService.findById(id).orElseThrow(() -> new CommonEmptyResultException(""));
         return ResponseEntity.ok(new UserResource(user));
     }
+
 }

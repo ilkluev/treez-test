@@ -7,6 +7,7 @@ ext {
             'boot-starter-parent'    : '2.0.4.RELEASE',
             'liquibase-core'         : '3.5.5',
             'mysql-connector-java'   : '8.0.15',
-            'lombok'                 : '1.18.6'
+            'lombok'                 : '1.18.6',
+            'validation-api'         : '2.0.1.Final'
     ]
 }

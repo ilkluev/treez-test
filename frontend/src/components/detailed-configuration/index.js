@@ -37,7 +37,7 @@ class DetailedConfiguration extends Component {
             return (
                 <div key={index} className="row mb-2">
                     <div className="col-1">
-                        <img src={addressLogo} alt="Address Logo"/>
+                        <img src={addressLogo} width="40px" height="40px" alt="Address Logo"/>
                     </div>
                     <div className="col-9">
                         <div>
