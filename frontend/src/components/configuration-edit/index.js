@@ -4,8 +4,6 @@ import removeLogo from "../../assets/add_user.svg";
 import axios from "axios";
 import './style.css';
 import {Link} from "react-router-dom";
-import ValidatedInput from '../validated-input'
-import Formsy from 'formsy-react';
 
 class ConfigurationEditor extends Component{
 
@@ -64,7 +62,7 @@ class ConfigurationEditor extends Component{
                     <div className="text-center alert alert-danger" role="alert">
                         <h3>An error occurred on server side!!!</h3>
                     </div> : null}
-                <form class="needs-validation" novalidate>
+                <form>
                     <div className="configuration-edit_form-field">
                         <label htmlFor="firstName">First Name<span className="text-danger">*</span></label>
                         <input value={this.state.firstName} onChange={(event) => {

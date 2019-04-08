@@ -89,7 +89,7 @@ export default class ConfigurationList extends Component {
             if (result.status === 200) {
 
                 this.setState({
-                    configurations: result.data._embedded.userDtoList,
+                    configurations: result.data._embedded ? result.data._embedded.userDtoList : [],
                     totalElements: result.data.page.totalElements,
                     totalPages: result.data.page.totalPages
 
